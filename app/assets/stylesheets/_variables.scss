@@ -1,0 +1,25 @@
+$primary: #424242;
+$secondary: #e7d7c1;
+$primary-outline: #bae3e3;
+
+.over-color-primary {
+    color: $primary;
+}
+
+.over-bg-primary {
+    background-color: $primary;
+}
+
+.over-color-secondary {
+    color: $secondary;
+}
+
+.over-bg-secondary {
+    background-color: $secondary;
+}
+
+.over-btn-secondary {
+    background-color: $secondary;
+    border: 1px solid $secondary;
+    color: $primary-outline;
+}

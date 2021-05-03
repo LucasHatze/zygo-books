@@ -1,0 +1,34 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.book-img-prev {
+    @media screen and (min-width: 768px) {
+        max-width: 200px;    
+    }
+}
+
+.book-cell {
+    padding: 20px;
+    border-top: 1px solid #c7c7c7;
+    border-bottom: 1px solid #c7c7c7;
+
+    @media screen and (min-width: 768px) {
+        height: 160px;    
+    }
+}
+
+.book-actions {
+    @media screen and (min-width: 768px) {
+        width: 200px;
+        padding: 10px;  
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-description {
+    height: 60px;
+}

@@ -1,0 +1,24 @@
+<div clas='form'>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+    <div class="form-group">
+      <%= f.label :email, 'Email' %>
+      <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, 'Senha' %>
+      <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="form-group">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, 'Lembre de mim' %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Entrar", class: 'btn btn-primary w-100' %>
+    </div>
+  <% end %>
+</div>

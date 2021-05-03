@@ -14,3 +14,30 @@
  *= require_tree .
  *= require_self
  */
+ 
+ html, body {
+    height: 100%;
+ }
+ 
+ .text-small {
+    font-size: 12px;
+ }
+ 
+ .text-md {
+    font-size: 14px;
+ }
+ 
+ .text-overflow {
+    overflow: auto;
+    
+ }
+ 
+ .section-header {
+    padding: 40px 0px;
+ 
+    h1 { font-weight: bold; }
+ }
+ 
+ .section {
+    padding-bottom: 50px;
+ }

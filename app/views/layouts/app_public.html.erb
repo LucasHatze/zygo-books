@@ -10,19 +10,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class='d-flex flex-column h-100'>
     <nav class="navbar navbar-light bg-light">
-        <div class='d-flex justify-content-between w-100'>
-          <%= link_to root_path do %>
-            <span class="navbar-brand mb-0 h1">Zygo Books</span>
-          <% end %>
-          <%= link_to 'Sair', destroy_user_session_path, data: { turbo: false, method: :delete }, class: 'link' %>
-        </div>
-        
+        <span class="navbar-brand mb-0 h1">Zygo Books</span>
     </nav>
     
-    <div class='container'>
-          <%= yield %>
+    <div class='container m-auto'>
+        <div class='d-flex align-items-center justify-content-center'>
+            <%= yield %>
+        </div>
     </div>
   </body>
 </html>

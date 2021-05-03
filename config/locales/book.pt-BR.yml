@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    attributes:
+      book:
+        title: Título
+        description: Descrição
+        author: Autor
+        image: Imagem

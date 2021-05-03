@@ -1,0 +1,57 @@
+<%= form_with(model: book) do |form| %>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class="form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %>
+        <%= bootstrap_errors_list(form, :title) %>
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-6'>
+      <div class="form-group">
+        <%= form.label :author %>
+        <%= form.text_field :author, class: 'form-control' %>
+        <%= bootstrap_errors_list(form, :description) %>
+      </div>
+    </div>
+
+    <div class='col-md-6'>
+      <div class='form-group'>
+        <label>Imagem</label>
+        <% if form.object.image.present? %>
+          <%= link_to 'Ver imagem', image_path(url_for(form.object.image)), target: '_blank', class: 'text-small' %>
+        <% end %>
+
+        <div class="custom-file">
+          <%= form.label :image, class: "custom-file-label" %>
+          <%= form.file_field :image, class: "custom-file-input w-25" %>
+          <%= bootstrap_errors_list(form, :image) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area:description, class: 'form-control text-area' %>
+        <%= bootstrap_errors_list(form, :author) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class='row'>
+      <div class='col-md-4 offset-md-4'>
+        <%= link_to 'Voltar', books_path, class: 'btn btn-outline-primary w-100 mb-2' %>
+      </div>
+      <div class='col-md-4'>
+        <%= form.submit form.object.persisted? ? 'Editar' : 'Criar', class: 'btn btn-primary w-100 mb-2' %>
+      </div>
+    </div>
+  </div>
+<% end %>
