@@ -11,6 +11,7 @@
         <div class='info w-100 pr-md-5'>
           <h4 class='font-weight-bold'><%= book.title %></h4>
           <p class='text-md text-justify text-overflow text-description'><%= book.description %></p>
+          <p class='text-small text-muted'>Autor: <%= book.author %></p>
         </div>
 
         <% if user_signed_in? %>

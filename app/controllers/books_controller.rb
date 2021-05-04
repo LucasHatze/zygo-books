@@ -50,12 +50,12 @@ class BooksController < ApplicationController
 
   def search
     books = Book.all
-    books = books.where("title like ?% or descrition like %?%", search_params[:query], search_params[:query]) if !search_params[:query].blank?
-    books = books.where("author like ?%", search_params[:author]) if !search_params[:author].blank?
+    books = books.where("title ilike ? or description ilike ?", search_params[:query]+'%', '%'+search_params[:query]+'%') if !search_params[:query].blank?
+    books = books.where("author ilike ?", search_params[:author]+'%') if !search_params[:author].blank?
     books = books.order(title: search_params[:order]) rescue books
 
     respond_to do |format|
-      format.turbo_stream { render turbo_stream.replace( :books, partial: 'books', locals: { books: books } ) }
+      format.turbo_stream { render turbo_stream: turbo_stream.replace('books', partial: 'books', locals: { books: books } ) }
     end
   end
 

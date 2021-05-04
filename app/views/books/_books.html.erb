@@ -1,1 +1,3 @@
-<%= render(partial: 'book', collection: @books) || render(partial: 'without_books') %>
+<%= turbo_frame_tag "books" do %>
+    <% render partial: 'book', collection: books %>
+<% end %>

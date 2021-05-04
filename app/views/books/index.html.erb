@@ -1,30 +1,32 @@
-<section class='section' data-controller='book'>
+<section class='section' data-controller='books'>
   <div class='section-header'>
     <h1>Livros</h1>
   </div>
 
   <div class='section-body'>
-    <%= form_with url: search_books_path, method: :get, data: { 'book-target'=> 'form', turbo: true } do |f| %>
-      <%= f.submit class: 'd-none', data: { 'book-target' => 'btnSubmit' } %>
+    <%= form_with url: search_books_path do |f| %>
+
+      <%= f.submit class: 'd-none', data: { disable_with: false, 'books-target' => 'btnSubmit' } %>
+      
       <div class='row'>
         <div class='col-md-4'>
             <div class='form-group'>
               <%= f.label :query, 'Buscar' %>
-              <%= f.text_field :query, class: 'form-control', placeholder: 'Título, descrição, palavra-chave...' %>
+              <%= f.text_field :query, class: 'form-control', placeholder: 'Título, descrição, palavra-chave...', data: { action: 'change->books#search' } %>
             </div>
         </div>
 
         <div class='col-md-4'>
           <div class='form-group'>
             <%= f.label :order, 'Ordernar títulos' %>
-            <%= f.select :order, options_for_select([['Crescente', :asc], ['Decrescente', :desc]]), { include_blank: 'Selecione' }, class: 'form-control'  %>
+            <%= f.select :order, options_for_select([['Crescente', :asc], ['Decrescente', :desc]]), { include_blank: 'Selecione' }, class: 'form-control', data: { action: 'change->books#search' } %>
           </div>
         </div>
 
         <div class='col-md-4'>
           <div class='form-group'>
               <%= f.label :author, 'Buscar por autor' %>
-              <%= f.text_field :author, class: 'form-control', placeholder: 'Nome do autor'  %>
+              <%= f.text_field :author, class: 'form-control', placeholder: 'Nome do autor', data: { action: 'change->books#search' } %>
             </div>
         </div>
       </div>
@@ -41,9 +43,7 @@
       </div>
     <% end %>
     
-    <%= turbo_frame_tag 'books' do %>
-        <%= render(partial: 'books', locals: { books: @books }) || render(partial: 'without_books') %>
-    <% end %>
+    <%= render(partial: 'books', locals: { books: @books }) || render(partial: 'without_books') %>
 
   </div>
 </section>
