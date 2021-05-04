@@ -16,8 +16,8 @@
 
         <% if user_signed_in? %>
           <div class='book-actions'>
-            <%= link_to 'Remover', book_path(book), data: { method: :delete, turbo: false }, class: 'btn btn-danger w-100 mt-2' %>
-            <%= link_to 'Editar', book_path(book), data: { method: :patch, turbo: false }, class: 'btn btn-outline-primary w-100 mt-2' %>
+            <%= button_to 'Remover', book_path(book), method: :delete, data: { turbo: false, confirm: 'Tem certeza?' }, class: 'btn btn-danger w-100 mt-2' %>
+            <%= button_to 'Editar', edit_book_path(book), method: :get, data: { turbo: false }, class: 'btn btn-outline-primary w-100 mt-2' %>
           </div>
         <% end %>
       </div>

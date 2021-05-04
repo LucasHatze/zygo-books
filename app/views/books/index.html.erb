@@ -7,18 +7,18 @@
     <%= form_with url: search_books_path do |f| %>
 
       <%= f.submit class: 'd-none', data: { disable_with: false, 'books-target' => 'btnSubmit' } %>
-      
+
       <div class='row'>
         <div class='col-md-4'>
             <div class='form-group'>
               <%= f.label :query, 'Buscar' %>
-              <%= f.text_field :query, class: 'form-control', placeholder: 'Título, descrição, palavra-chave...', data: { action: 'change->books#search' } %>
+              <%= f.text_field :query, class: 'form-control', placeholder: 'Título, descrição, palavra-chave...', data: { action: 'keyup->books#search' } %>
             </div>
         </div>
 
         <div class='col-md-4'>
           <div class='form-group'>
-            <%= f.label :order, 'Ordernar títulos' %>
+            <%= f.label :order, 'Ordernar títulos por ordem' %>
             <%= f.select :order, options_for_select([['Crescente', :asc], ['Decrescente', :desc]]), { include_blank: 'Selecione' }, class: 'form-control', data: { action: 'change->books#search' } %>
           </div>
         </div>
@@ -26,7 +26,7 @@
         <div class='col-md-4'>
           <div class='form-group'>
               <%= f.label :author, 'Buscar por autor' %>
-              <%= f.text_field :author, class: 'form-control', placeholder: 'Nome do autor', data: { action: 'change->books#search' } %>
+              <%= f.text_field :author, class: 'form-control', placeholder: 'Nome do autor', data: { action: 'keyup->books#search' } %>
             </div>
         </div>
       </div>
@@ -43,7 +43,11 @@
       </div>
     <% end %>
     
-    <%= render(partial: 'books', locals: { books: @books }) || render(partial: 'without_books') %>
+    <% if @books.any? %>
+      <%= render(partial: 'books', locals: { books: @books }) %>
+    <% else %>
+      <%= render(partial: 'without_books') %>
+    <% end %>
 
   </div>
 </section>

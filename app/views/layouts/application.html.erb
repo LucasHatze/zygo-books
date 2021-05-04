@@ -20,7 +20,7 @@
           <% if user_signed_in? %>
             <%= link_to 'Sair', destroy_user_session_path, data: { turbo: false, method: :delete }, class: 'link' %>
           <% else %>
-            <%= link_to 'Entrar', new_user_session_path, data: { turbo: false, method: :get }, class: 'link' %>
+            <%= button_to 'Entrar', new_user_session_path, class: 'btn btn-link', data: { turbo: false, method: :get } %>
           <% end %>
         </div>
         

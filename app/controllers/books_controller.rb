@@ -33,7 +33,7 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html { redirect_to @book }
+        format.html { redirect_to books_path }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
