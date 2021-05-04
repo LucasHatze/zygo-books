@@ -1,5 +1,4 @@
-# README
-Especificações do projeto:
+# Especificações do projeto:
 
 * Ruby version: 3.0.1
 * Rails 6.1.3.1 
@@ -10,7 +9,7 @@ Especificações do projeto:
 PostgreSQL
 
 Database creation
-rails db:create db:migrate
+rails db:create db:migrate db:seed
 
 -----------------------------
 
@@ -31,3 +30,5 @@ Docs: https://github.com/hotwired/hotwire-rails
 * rails s (running in default port 3030)
 
 Página inicial (root path): /
+Login: zygo@zygo.com
+Password: 123123
