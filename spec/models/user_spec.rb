@@ -15,5 +15,37 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#create" do
+    context "when valid" do
+      let(:user) { User.new(email: 'test@test.com', password: '123123', full_name: 'Teste') }
+
+      it { expect { user.save }.to change(User, :count).by(1) }
+    end
+    
+    context "when invalid" do
+      let(:user) { User.new(email: 'test@test.com', full_name: 'Teste') }
+
+      it { expect { user.save }.to change(User, :count).by(0) }
+    end
+  end
+
+  describe "#destroy" do
+    let!(:user) { User.create(email: 'test@test.com', password: '123123', full_name: 'Teste') }
+
+    it { expect { user.destroy }.to change(User, :count).by(-1) }
+  end
+
+  describe "#update" do
+    context "when valid" do
+      let!(:user) { User.create(email: 'test@test.com', password: '123123', full_name: 'Teste') }
+
+      it { expect { user.update(full_name: 'Test2') }.to change(user, :full_name) }
+    end
+    
+    context "when invalid" do
+      let(:user) { User.create(email: 'test@test.com', password: '123123', full_name: 'Teste') }
+
+      it { expect { user.update(email: '') }.not_to change(user, :full_name) }
+    end
+  end
 end
