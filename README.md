@@ -26,8 +26,8 @@ Docs: https://github.com/hotwired/hotwire-rails
 -----------------------------
 
 # Initial setup
-npm install (using npm)
-yarn install (using yarn)
-rails s (running in default port 3030)
+* npm install (using npm)
+* yarn install (using yarn)
+* rails s (running in default port 3030)
 
 Página inicial (root path): /
