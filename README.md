@@ -4,24 +4,30 @@ Especificações do projeto:
 * Ruby version: 3.0.1
 * Rails 6.1.3.1 
 
-* Database
-* PostgreSQL
+-----------------------------
 
-* Database creation
-* rails db:create db:migrate
+# Database
+PostgreSQL
 
-* How to run the test suite
-* Test suite using rspec
-* rspec spec/
+Database creation
+rails db:create db:migrate
 
+-----------------------------
 
-* Using Hotwire for dynamic render
-* Docs: https://github.com/hotwired/hotwire-rails
+# How to run the test suite
+Test suite using rspec
+rspec spec/
 
-* Initial setup
-* npm install (using npm)
-* yarn install (using yarn)
+-----------------------------
 
-* rails s (running in default port 3030)
+# Using Hotwire for dynamic render
+Docs: https://github.com/hotwired/hotwire-rails
 
-* Página inicial (root path): /
+-----------------------------
+
+# Initial setup
+npm install (using npm)
+yarn install (using yarn)
+rails s (running in default port 3030)
+
+Página inicial (root path): /
