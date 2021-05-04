@@ -1,24 +1,33 @@
 # README
+Especificações do projeto:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 3.0.1
+* Rails 6.1.3.1 
 
-Things you may want to cover:
+-----------------------------
 
-* Ruby version
+# Database
+PostgreSQL
 
-* System dependencies
+Database creation
+rails db:create db:migrate
 
-* Configuration
+-----------------------------
 
-* Database creation
+# How to run the test suite
+Test suite using rspec
+rspec spec/
 
-* Database initialization
+-----------------------------
 
-* How to run the test suite
+# Using Hotwire for dynamic render
+Docs: https://github.com/hotwired/hotwire-rails
 
-* Services (job queues, cache servers, search engines, etc.)
+-----------------------------
 
-* Deployment instructions
+# Initial setup
+* npm install (using npm)
+* yarn install (using yarn)
+* rails s (running in default port 3030)
 
-* ...
+Página inicial (root path): /
