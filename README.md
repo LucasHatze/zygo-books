@@ -30,5 +30,5 @@ Docs: https://github.com/hotwired/hotwire-rails
 * rails s (running in default port 3030)
 
 Página inicial (root path): /
-Login: zygo@zygo.com
-Password: 123123
+* Login: zygo@zygo.com
+* Password: 123123
